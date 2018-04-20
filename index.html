@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sticky Text | Study</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- div.slide*10>div.sticky-text>lorem10 -->
+    <div class="slide">
+        <div class="sticky-text">This is the text to stick</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, facilis.</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Aut optio officia et dolor nam accusamus ipsum cupiditate fugiat?</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Distinctio voluptate magni adipisci necessitatibus dignissimos sequi nulla culpa incidunt!</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Nihil, fuga amet! Repudiandae nam quis sit id iure consequatur?</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Suscipit corporis dicta expedita itaque officiis cum temporibus, illo sunt!</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Consectetur iste delectus suscipit culpa excepturi vitae id minima explicabo.</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Ipsum excepturi veniam neque asperiores? Sequi deleniti magnam quisquam recusandae.</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Laudantium fuga aspernatur autem ratione ea unde fugiat praesentium perspiciatis?</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Veritatis est illum similique enim totam architecto dolorum ipsum odio.</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Dicta et sed iste cumque architecto maiores similique corrupti quibusdam?</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Camet consectetur, adipisicing elit.</div>
+    </div>
+
+    <div class="slide">
+        <div class="sticky-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim dolorem nostrum nesciunt.</div>
+    </div>
+
+    <script>
+        $(function() { 
+            var screenTop = null;
+            var vpad = parseInt($('.sticky-text').css('top'), 10); // 24;
+
+            $(document).scroll( function() { 
+                screenTop = $(document).scrollTop();
+                // Attach to each slide
+                $.each($('.slide'), function(i,v) {
+                    if ($(v).offset().top < (screenTop+vpad))
+                        $(v).find('.sticky-text').css({top:screenTop-($(v).height()*i)-(i*vpad)});
+                    else
+                        $(v).find('.sticky-text').css({top:vpad});
+                });
+            });
+        });
+    </script>
+</body>
+</html>

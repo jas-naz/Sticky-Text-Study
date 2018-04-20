@@ -1,0 +1,12 @@
+.slide {
+  background-color: gray;
+  margin: 30px;
+  height: 285px;
+  position: relative;
+}
+.sticky-text {
+  color: white;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
